@@ -1,0 +1,23 @@
+name: Build and Deploy on GH Pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  buildAndDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14'
+      # - run: npm install
+      # - run: npm run build
+      - name: Create report file
+        run: mkdir -p public && echo "# Hello, World" > public/index.md
+      - name: Commit report
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'actions@github.com'
+          git add -A public && git commit -m "Build and deploy on gh-pages"
+          git subtree push --prefix public origin gh-pages
