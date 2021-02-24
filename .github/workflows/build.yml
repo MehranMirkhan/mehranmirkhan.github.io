@@ -11,15 +11,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - run: npm install
-      - run: npm run build
-      - name: Publish to GH Pages
+      - name: Install
+        run: npm i
+      - name: Pull
+        run: git subtree pull --prefix public origin gh-pages
+      - name: Build
+        run: npm run build
+      - name: Push
         run: |
-          npm i
           git config --global user.name 'Github Actions'
           git config --global user.email 'actions@github.com'
-          git subtree pull --prefix public
-          npm run build
           git subtree add --prefix public -A
           git subtree commit --prefix public -m "Build and deploy on gh-pages"
           git subtree push --prefix public origin gh-pages
