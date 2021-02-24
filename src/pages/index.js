@@ -8,16 +8,23 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const WelcomeText = styled.span`
+const TitleText = styled.span`
   font-family: Courier New;
   font-weight: bold;
   font-size: 36pt;
 `;
 
+const SubtitleText = styled.span`
+  font-family: Courier New;
+  font-size: 12pt;
+  color: #ccc;
+`;
+
 export default () => (
   <main>
     <Center>
-      <WelcomeText id="welcome">Hello, World!</WelcomeText>
+      <TitleText id="welcome">Hello, World!</TitleText>
+      <SubtitleText>By Gatsby</SubtitleText>
     </Center>
   </main>
 );
