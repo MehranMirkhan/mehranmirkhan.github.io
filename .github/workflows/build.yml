@@ -13,8 +13,11 @@ jobs:
           node-version: "14"
       - name: Prepare public
         run: |
-          git clone https://github.com/MehranMirkhan/mehranmirkhan.github.io.git public
+          mkdir -p public
           cd public
+          git init
+          git add remote origin https://github.com/MehranMirkhan/mehranmirkhan.github.io.git
+          git fetch origin gh-pages
           git checkout gh-pages
           cd ..
       - name: Install
