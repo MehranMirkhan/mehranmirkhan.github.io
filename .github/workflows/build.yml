@@ -1,8 +1,8 @@
-name: Build and Deploy on GH Pages
+name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   Deploy:
     runs-on: ubuntu-latest
@@ -16,12 +16,12 @@ jobs:
           git config --global user.name 'Github Actions'
           git config --global user.email 'actions@github.com'
       - name: Prepare public
-        run: git subtree add --prefix public origin gh-pages
+        run: git subtree add --prefix public origin master
       - name: Install
         run: npm i
       - name: Build
         run: npm run build
       - name: Push
         run: |
-          git add -A -f public && git commit -m "Build and deploy on gh-pages"
-          git subtree push --prefix public origin gh-pages
+          git add -A -f public && git commit -m "Build and deploy"
+          git subtree push --prefix public origin master
