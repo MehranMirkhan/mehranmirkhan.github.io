@@ -15,7 +15,11 @@ jobs:
       - run: npm run build
       - name: Publish to GH Pages
         run: |
+          npm i
           git config --global user.name 'Github Actions'
           git config --global user.email 'actions@github.com'
-          git add -f -A public && git commit -m "Build and deploy on gh-pages"
+          git subtree pull --prefix public
+          npm run build
+          git subtree add --prefix public -A
+          git subtree commit --prefix public -m "Build and deploy on gh-pages"
           git subtree push --prefix public origin gh-pages
