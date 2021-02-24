@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "mirweb",
+    title: "mehranmirkhan",
   },
   plugins: [
     "gatsby-plugin-styled-components",
