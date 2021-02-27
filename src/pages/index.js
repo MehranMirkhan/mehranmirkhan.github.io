@@ -24,7 +24,7 @@ export default () => (
   <main>
     <Center>
       <TitleText id="welcome">Hello, World!</TitleText>
-      <SubtitleText>By Gatsby</SubtitleText>
+      <SubtitleText>Produced by Gatsby</SubtitleText>
     </Center>
   </main>
 );
