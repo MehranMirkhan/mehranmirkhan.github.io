@@ -15,6 +15,7 @@ jobs:
         run: |
           git config --global user.name 'Github Actions'
           git config --global user.email 'actions@github.com'
+          git checkout dev
       - name: Prepare public
         run: git subtree add --prefix public origin master
       - name: Install
