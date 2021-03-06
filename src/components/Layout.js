@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
-import { extractChildren } from "../utils";
+import { extractChildren, isBrowser } from "../utils";
 
 const Container = styled.main`
   height: 100vh;
@@ -42,7 +42,7 @@ const BodyItemHeader = styled.h1`
 
 class Layout extends React.Component {
   static SidebarItem = ({ tag, name }) => {
-    const currentPage = window.location.href.split("#");
+    const currentPage = isBrowser() ? window.location.href.split("#") : [];
     const active = currentPage.length > 1 ? currentPage[1] === tag : false;
     return (
       <SidebarItem href={`#${tag}`} active={active}>

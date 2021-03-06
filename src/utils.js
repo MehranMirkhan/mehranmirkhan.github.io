@@ -4,3 +4,5 @@ export function extractChildren(children, ...types) {
     children.filter((child) => types.indexOf(child.type) === -1),
   ];
 }
+
+export const isBrowser = () => typeof window !== "undefined";
