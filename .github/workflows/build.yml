@@ -18,6 +18,7 @@ jobs:
           git checkout dev
       - name: Prepare public
         run: git subtree add --prefix public origin master
+        run: cd public && ls | grep -v README.md | parallel rm && cd ..
       - name: Install
         run: npm i
       - name: Build
