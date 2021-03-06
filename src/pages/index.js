@@ -1,29 +1,22 @@
 import React from "react";
-import styled from "styled-components";
 
-const Center = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TitleText = styled.span`
-  font-family: Courier New;
-  font-weight: bold;
-  font-size: 36pt;
-`;
-
-const SubtitleText = styled.span`
-  font-family: Courier New;
-  font-size: 12pt;
-  color: #ccc;
-`;
+import Layout from "../components/Layout";
 
 export default () => (
-  <main>
-    <Center>
-      <TitleText id="welcome">Hello, World!</TitleText>
-    </Center>
-  </main>
+  <Layout>
+    <Layout.SidebarItem tag="info" name="About Me" />
+    <Layout.SidebarItem tag="edu" name="Education" />
+    <Layout.SidebarItem tag="pub" name="Publications" />
+    <Layout.SidebarItem tag="job" name="Career" />
+    <Layout.SidebarItem tag="hobby" name="Interests" />
+    <Layout.BodyItem tag="info" name="About Me">
+      <p>My name is Mehran Mirkhan</p>
+      <p>I am a full-stack web developer at day</p>
+      <p>and an AI researcher at night</p>
+    </Layout.BodyItem>
+    <Layout.BodyItem tag="edu" name="Education"></Layout.BodyItem>
+    <Layout.BodyItem tag="pub" name="Publications"></Layout.BodyItem>
+    <Layout.BodyItem tag="job" name="Career"></Layout.BodyItem>
+    <Layout.BodyItem tag="hobby" name="Interests"></Layout.BodyItem>
+  </Layout>
 );

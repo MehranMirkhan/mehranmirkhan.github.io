@@ -11,9 +11,10 @@ const Container = styled.main`
 `;
 
 const Sidebar = styled.div`
+  min-width: 20%;
   background-color: #444;
   overflow-y: auto;
-  padding: 12px;
+  padding: 12px 0;
 `;
 
 const Body = styled.div`
@@ -24,21 +25,37 @@ const Body = styled.div`
 
 const SidebarItem = styled.a`
   display: block;
-  padding: 12px;
-  color: #ddd;
+  text-decoration: none;
+  padding: 12px 24px;
+  background-color: ${(props) => (props.active ? "#f1ac14" : "unset")};
+  color: ${(props) => (props.active ? "#333" : "#ddd")};
 `;
 
 const BodyItem = styled.div`
   height: 100vh;
+  padding: 32px;
+`;
+
+const BodyItemHeader = styled.h1`
+  text-align: center;
 `;
 
 class Layout extends React.Component {
-  static SidebarItem = ({ name, children }) => {
-    return <SidebarItem href={`#${name}`}>{children}</SidebarItem>;
+  static SidebarItem = ({ tag, name }) => {
+    const currentPage = window.location.href.split("#");
+    const active = currentPage.length > 1 ? currentPage[1] === tag : false;
+    return (
+      <SidebarItem href={`#${tag}`} active={active}>
+        {name}
+      </SidebarItem>
+    );
   };
 
-  static BodyItem = ({ name, children }) => (
-    <BodyItem id={name}>{children}</BodyItem>
+  static BodyItem = ({ tag, name, children }) => (
+    <BodyItem id={tag}>
+      <BodyItemHeader>{name}</BodyItemHeader>
+      {children}
+    </BodyItem>
   );
 
   render() {
