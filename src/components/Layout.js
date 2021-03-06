@@ -4,19 +4,19 @@ import styled from "styled-components";
 import { extractChildren } from "../utils";
 
 class Layout extends React.Component {
-  static NavbarItem = styled.div``;
   static SidebarItem = styled.div``;
+  static Body = styled.div``;
 
   render() {
-    const [navbarItems, sidebarItems, rest] = extractChildren(
+    const [sidebarItems, body, rest] = extractChildren(
       this.props.children,
-      Layout.NavbarItem,
-      Layout.SidebarItem
+      Layout.SidebarItem,
+      Layout.Body
     );
     return (
       <main>
-        {navbarItems}
         {sidebarItems}
+        {body}
         {rest}
       </main>
     );

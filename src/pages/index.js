@@ -24,7 +24,6 @@ export default () => (
   <main>
     <Center>
       <TitleText id="welcome">Hello, World!</TitleText>
-      <SubtitleText>Produced by Gatsby</SubtitleText>
     </Center>
   </main>
 );
