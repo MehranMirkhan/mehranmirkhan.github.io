@@ -8,5 +8,6 @@ export default () => (
     <Layout.SidebarItem>SidebarItem 2</Layout.SidebarItem>
     <Layout.SidebarItem>SidebarItem 3</Layout.SidebarItem>
     <span>Child 1</span>
+    <span>Child 2</span>
   </Layout>
 );
