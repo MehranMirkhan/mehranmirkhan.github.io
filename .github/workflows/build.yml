@@ -19,7 +19,9 @@ jobs:
       - name: Prepare public
         run: |
           git subtree add --prefix public origin master
-          cd public && ls | grep -v README.md | parallel rm && cd ..
+          mv public/README.md ./README-temp.md
+          rm -rf public/*
+          mv ./README-temp.md public/README.md
       - name: Install
         run: npm i
       - name: Build
