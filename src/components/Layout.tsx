@@ -11,9 +11,12 @@ import profile from "src/images/profile.jpg";
 
 namespace Layout {
   export const Container = ({ children }: any) => (
-    <div className="p-0 m-0 h-screen flex flex-row items-stretch bg-gray-300">
-      {children}
-    </div>
+    <>
+      <title>Mehran Mirkhan - Personal Website</title>
+      <div className="p-0 m-0 h-screen flex flex-row items-stretch bg-gray-300">
+        {children}
+      </div>
+    </>
   );
   export const Sidebar = ({ children }: any) => (
     <aside className="w-64 overflow-y-auto bg-slate-800 flex-shrink-0">
