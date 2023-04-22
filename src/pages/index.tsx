@@ -101,7 +101,7 @@ const Reference = ({ index, children }: { index: number; children: any }) => (
 
 const Products = () => (
   <Element.Segment title="Products">
-    <div className="flex flex-row gap-8 items-center">
+    <div className="flex flex-row justify-center gap-8 items-center">
       <div className="w-24 text-right text-gray-500">
         <img src={atomaze} alt="AtoMaze Logo" className="w-24 h-24" />
       </div>

@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
+import {
+  UserCircleIcon,
+  PencilSquareIcon,
+  Cog8ToothIcon,
+} from "@heroicons/react/24/solid";
 
-import avatar from "src/images/avatar.png";
+import profile from "src/images/profile.jpg";
 
 namespace Layout {
   export const Container = ({ children }: any) => (
@@ -10,12 +15,15 @@ namespace Layout {
     </div>
   );
   export const Sidebar = ({ children }: any) => (
-    <aside className="w-64 overflow-y-auto bg-gray-900 flex-shrink-0">{children}</aside>
+    <aside className="w-64 overflow-y-auto bg-slate-800 flex-shrink-0">
+      {children}
+    </aside>
   );
   export const SidebarLogo = () => (
-    <div className="w-32 h-32 mx-auto mt-2 rounded-full overflow-hidden">
-      <img src={avatar} />
-    </div>
+    <img
+      src={profile}
+      className="w-32 h-32 mx-auto my-10 rounded-full overflow-hidden"
+    />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {
     const isActive =
@@ -25,8 +33,8 @@ namespace Layout {
       <li>
         <Link
           to={href}
-          className={`font-copperplate text-lg flex justify-center items-center p-4 m-4 rounded-lg text-center cursor-pointer ${
-            isActive ? "bg-amber-600" : "bg-gray-600 hover:bg-gray-500"
+          className={`text-lg flex items-center p-4 text-center ${
+            isActive ? "bg-slate-500" : "bg-slate-700 hover:bg-slate-600"
           } text-white shadow-lg`}
         >
           {children}
@@ -43,12 +51,30 @@ export const MainLayout = ({ children }: any) => (
   <>
     <Layout.Container>
       <Layout.Sidebar>
-        <Layout.SidebarLogo />
-        <ul>
-          <Layout.SidebarItem href="/">About Me</Layout.SidebarItem>
-          <Layout.SidebarItem href="/blog">Blog</Layout.SidebarItem>
-          <Layout.SidebarItem href="/misc">Misc.</Layout.SidebarItem>
-        </ul>
+        <div className="h-full flex flex-col justify-between">
+          <div>
+            <Layout.SidebarLogo />
+            <ul>
+              <Layout.SidebarItem href="/">
+                <UserCircleIcon className="h-6 w-6 mr-6 text-white" />
+                About Me
+              </Layout.SidebarItem>
+              <Layout.SidebarItem href="/blog">
+                <PencilSquareIcon className="h-6 w-6 mr-6 text-white" />
+                Blog
+              </Layout.SidebarItem>
+              <Layout.SidebarItem href="/misc">
+                <Cog8ToothIcon className="h-6 w-6 mr-6 text-white" />
+                Misc.
+              </Layout.SidebarItem>
+            </ul>
+          </div>
+          <div className="text-center p-2 text-gray-400 text-xs font-general">
+            © 2023 Mehran Mirkhan
+            <br />
+            All rights reserved
+          </div>
+        </div>
       </Layout.Sidebar>
       <Layout.Main>{children}</Layout.Main>
     </Layout.Container>
