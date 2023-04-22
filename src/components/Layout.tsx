@@ -26,7 +26,7 @@ namespace Layout {
         <Link
           to={href}
           className={`font-copperplate text-lg flex justify-center items-center p-4 m-4 rounded-lg text-center cursor-pointer ${
-            isActive ? "bg-amber-500" : "bg-gray-600 hover:bg-gray-500"
+            isActive ? "bg-amber-600" : "bg-gray-600 hover:bg-gray-500"
           } text-white shadow-lg`}
         >
           {children}

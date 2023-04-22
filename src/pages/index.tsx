@@ -3,14 +3,36 @@ import React from "react";
 import { MainLayout } from "src/components/Layout";
 import Element from "src/components/Element";
 
+import avatar from "src/images/avatar.png";
+
 export default () => (
   <MainLayout>
     <div className="flex flex-col gap-6 md:px-8 lg:px-24 py-6">
+      <About />
       <Contact />
       <Publications />
       <ProfessionalExperience />
     </div>
   </MainLayout>
+);
+
+const About = () => (
+  <div className="relative mt-24">
+    <Element.Segment>
+      <div className="absolute top-0 left-0 w-full">
+        <img
+          src={avatar}
+          alt="Profile Picture"
+          className="w-48 h-48 mx-auto rounded-full -translate-y-24 shadow-2xl"
+        />
+      </div>
+      <div className="h-20" />
+      <h1 className="font-copperplate text-3xl text-center py-2">
+        Mehran Mirkhan
+      </h1>
+      <h1 className="text-xl text-center">Web Developer & AI Researcher</h1>
+    </Element.Segment>
+  </div>
 );
 
 const Contact = () => (
@@ -75,10 +97,6 @@ const Reference = ({ index, children }: { index: number; children: any }) => (
 
 const ProfessionalExperience = () => (
   <Element.Segment title="Professional Experience">
-    <p>
-      I am a fullstack web developer and an AI researcher. Here are some of the
-      areas that I have experience in:
-    </p>
     <div className="flex flex-col gap-10 mt-6">
       <Element.CompactSegment title="Programming Languages">
         <SkillsContainer>
