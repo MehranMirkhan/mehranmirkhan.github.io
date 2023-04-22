@@ -3,7 +3,8 @@ import React from "react";
 import { MainLayout } from "src/components/Layout";
 import Element from "src/components/Element";
 
-import avatar from "src/images/avatar.png";
+import profile from "src/images/profile.jpg";
+import atomaze from "src/images/atomaze.png";
 
 export default () => (
   <MainLayout>
@@ -11,6 +12,7 @@ export default () => (
       <About />
       <Contact />
       <Publications />
+      <Products />
       <Technologies />
     </div>
   </MainLayout>
@@ -21,12 +23,12 @@ const About = () => (
     <Element.Segment>
       <div className="absolute top-0 left-0 w-full">
         <img
-          src={avatar}
+          src={profile}
           alt="Profile Picture"
           className="w-48 h-48 mx-auto rounded-full -translate-y-24 shadow-2xl"
         />
       </div>
-      <div className="h-20" />
+      <div className="h-16" />
       <h1 className="font-copperplate text-3xl text-center py-2">
         Mehran Mirkhan
       </h1>
@@ -97,9 +99,26 @@ const Reference = ({ index, children }: { index: number; children: any }) => (
   </div>
 );
 
+const Products = () => (
+  <Element.Segment title="Products">
+    <div className="flex flex-row gap-8 items-center">
+      <div className="w-24 text-right text-gray-500">
+        <img src={atomaze} alt="AtoMaze Logo" className="w-24 h-24" />
+      </div>
+      <div className="text-2xl">AtoMaze</div>
+      <Element.LinkLabel href="https://apps.apple.com/us/app/atomaze-atom-in-maze/id1601103437">
+        ios
+      </Element.LinkLabel>
+      <Element.LinkLabel href="https://play.google.com/store/apps/details?id=app.atomaze.android&hl=en&gl=US">
+        Android
+      </Element.LinkLabel>
+    </div>
+  </Element.Segment>
+);
+
 const Technologies = () => (
   <Element.Segment title="Technological Expertise">
-    <div className="flex flex-col gap-10 mt-6">
+    <div className="flex flex-col gap-10 mt-8">
       <Element.CompactSegment title="Programming Languages">
         <SkillsContainer>
           <Element.Label>Java</Element.Label>
