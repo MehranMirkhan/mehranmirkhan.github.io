@@ -11,7 +11,7 @@ export default () => (
       <About />
       <Contact />
       <Publications />
-      <ProfessionalExperience />
+      <Technologies />
     </div>
   </MainLayout>
 );
@@ -37,20 +37,22 @@ const About = () => (
 
 const Contact = () => (
   <Element.Segment title="Contact">
-    <div className="grid gap-x-10 gap-y-4 lg:grid-cols-2 md:grid-cols-1">
-      <Element.LabeledInfo label="Email">
-        <a href="mailto:mehran.mirkhan@gmail.com">mehran.mirkhan@gmail.com</a>
-      </Element.LabeledInfo>
-      <Element.LabeledInfo label="LinkedIn">
-        <a href="https://www.linkedin.com/in/mehran-mirkhan/">
-          https://www.linkedin.com/in/mehran-mirkhan/
-        </a>
-      </Element.LabeledInfo>
-      <Element.LabeledInfo label="Github">
-        <a href="https://github.com/MehranMirkhan/">
-          https://github.com/MehranMirkhan/
-        </a>
-      </Element.LabeledInfo>
+    <div className="w-[28rem] mx-auto">
+      <div className="flex flex-col items-stretch gap-2">
+        <Element.LabeledInfo label="Email">
+          <a href="mailto:mehran.mirkhan@gmail.com">mehran.mirkhan@gmail.com</a>
+        </Element.LabeledInfo>
+        <Element.LabeledInfo label="LinkedIn">
+          <a href="https://www.linkedin.com/in/mehran-mirkhan/">
+            https://www.linkedin.com/in/mehran-mirkhan/
+          </a>
+        </Element.LabeledInfo>
+        <Element.LabeledInfo label="Github">
+          <a href="https://github.com/MehranMirkhan/">
+            https://github.com/MehranMirkhan/
+          </a>
+        </Element.LabeledInfo>
+      </div>
     </div>
   </Element.Segment>
 );
@@ -95,8 +97,8 @@ const Reference = ({ index, children }: { index: number; children: any }) => (
   </div>
 );
 
-const ProfessionalExperience = () => (
-  <Element.Segment title="Professional Experience">
+const Technologies = () => (
+  <Element.Segment title="Technological Expertise">
     <div className="flex flex-col gap-10 mt-6">
       <Element.CompactSegment title="Programming Languages">
         <SkillsContainer>
