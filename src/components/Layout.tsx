@@ -6,6 +6,7 @@ import {
   Cog8ToothIcon,
 } from "@heroicons/react/24/solid";
 
+import { isBrowser } from "src/utils";
 import profile from "src/images/profile.jpg";
 
 namespace Layout {
@@ -26,9 +27,10 @@ namespace Layout {
     />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {
-    const isActive =
-      window.location.pathname === href ||
-      window.location.pathname === `${href}/`;
+    const isActive = isBrowser()
+      ? window.location.pathname === href ||
+        window.location.pathname === `${href}/`
+      : href === "/";
     return (
       <li>
         <Link
