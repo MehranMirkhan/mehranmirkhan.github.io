@@ -17,16 +17,23 @@ namespace Layout {
       <img src={avatar} />
     </div>
   );
-  export const SidebarItem = ({ children, href = "#" }: any) => (
-    <li>
-      <Link
-        to={href}
-        className="font-copperplate text-lg flex justify-center items-center p-4 m-4 rounded-lg text-center cursor-pointer bg-gray-600 hover:bg-gray-500 text-white shadow-lg"
-      >
-        {children}
-      </Link>
-    </li>
-  );
+  export const SidebarItem = ({ children, href = "#" }: any) => {
+    const isActive =
+      window.location.pathname === href ||
+      window.location.pathname === `${href}/`;
+    return (
+      <li>
+        <Link
+          to={href}
+          className={`font-copperplate text-lg flex justify-center items-center p-4 m-4 rounded-lg text-center cursor-pointer ${
+            isActive ? "bg-amber-500" : "bg-gray-600 hover:bg-gray-500"
+          } text-white shadow-lg`}
+        >
+          {children}
+        </Link>
+      </li>
+    );
+  };
   export const Main = ({ children }: any) => (
     <main className="flex-grow px-8 py-6">{children}</main>
   );
