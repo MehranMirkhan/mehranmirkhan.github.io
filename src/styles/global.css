@@ -1,9 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-  scroll-behavior: smooth;
+  font-family: "Optima";
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Courier New";
+.font-copperplate {
+  font-family: "Copperplate";
+}
+
+.font-general {
+  font-family: "Helvetica";
 }
