@@ -10,7 +10,7 @@ namespace Layout {
     </div>
   );
   export const Sidebar = ({ children }: any) => (
-    <aside className="w-64 overflow-y-auto bg-gray-900">{children}</aside>
+    <aside className="w-64 overflow-y-auto bg-gray-900 flex-shrink-0">{children}</aside>
   );
   export const SidebarLogo = () => (
     <div className="w-32 h-32 mx-auto mt-2 rounded-full overflow-hidden">
@@ -35,7 +35,7 @@ namespace Layout {
     );
   };
   export const Main = ({ children }: any) => (
-    <main className="flex-grow px-8 py-6">{children}</main>
+    <main className="flex-grow overflow-y-auto">{children}</main>
   );
 }
 
