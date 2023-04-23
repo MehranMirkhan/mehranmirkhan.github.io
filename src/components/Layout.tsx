@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { isBrowser } from "src/utils";
-import profile from "src/images/profile.jpg";
+import logo from "src/images/Mirkhan_Logo.jpg";
 
 namespace Layout {
   export const Container = ({ children }: any) => (
@@ -25,8 +25,8 @@ namespace Layout {
   );
   export const SidebarLogo = () => (
     <img
-      src={profile}
-      className="w-32 h-32 mx-auto my-10 rounded-full overflow-hidden"
+      src={logo}
+      className="w-48 h-48 mx-auto my-6 rounded-full overflow-hidden"
     />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {

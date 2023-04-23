@@ -40,7 +40,7 @@ const config: GatsbyConfig = {
           // Avoids sending pageview hits from custom paths
           exclude: ["/preview/**", "/do-not-track/me/too/"],
           // Defaults to https://www.googletagmanager.com
-          origin: "https://mehranmirkhan.github.io",
+          // origin: "https://mehranmirkhan.github.io",
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/avatar.png",
+        icon: "src/images/Mirkhan_Logo.jpg",
       },
     },
     "gatsby-plugin-mdx",
