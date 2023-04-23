@@ -1,8 +1,10 @@
 import React from "react";
 
 namespace Element {
-  export const Segment = ({ children, title }: any) => (
-    <div className="bg-gray-50 p-10 rounded-lg shadow-lg ring-1 ring-inset ring-gray-300">
+  export const Segment = ({ children, title, className }: any) => (
+    <div
+      className={`bg-gray-50 p-10 rounded-lg shadow-lg ring-1 ring-inset ring-gray-300 ${className}`}
+    >
       {title ? (
         <h1 className="mx-auto w-fit mb-6 pb-1 text-3xl font-copperplate border-b-2 border-b-gray-300">
           {title}

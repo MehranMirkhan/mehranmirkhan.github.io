@@ -1,6 +1,6 @@
 .blog {
   h1 {
-    @apply text-2xl underline underline-offset-8 pb-4;
+    @apply text-2xl underline underline-offset-8 py-4;
   }
   h2 {
     @apply text-xl;
@@ -28,5 +28,17 @@
     td {
       @apply border-2 p-3;
     }
+  }
+  code * {
+    font-family: "Courier New", Courier, monospace;
+  }
+  figcaption {
+    @apply text-sm text-gray-500 block text-center;
+  }
+  img {
+    @apply max-w-xl mx-auto;
+  }
+  a {
+    @apply text-sky-500 underline underline-offset-2;
   }
 }

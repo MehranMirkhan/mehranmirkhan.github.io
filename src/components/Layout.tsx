@@ -13,7 +13,7 @@ namespace Layout {
   export const Container = ({ children }: any) => (
     <>
       <title>Mehran Mirkhan - Personal Website</title>
-      <div className="p-0 m-0 h-screen flex flex-row items-stretch bg-gray-300">
+      <div className="p-0 m-0 h-screen flex flex-row items-stretch bg-gray-400">
         {children}
       </div>
     </>
@@ -44,15 +44,6 @@ namespace Layout {
         );
       }
     }, [window]);
-    // const path = isBrowser()
-    //   ? window.location.pathname.split("/").filter((s) => !!s)[0] ?? ""
-    //   : "";
-    // const isActive = isBrowser()
-    //   ? href === path ||
-    //     href === `${path}/` ||
-    //     href === `/${path}` ||
-    //     href === `/${path}/`
-    //   : href === "/";
     return (
       <li>
         <Link
