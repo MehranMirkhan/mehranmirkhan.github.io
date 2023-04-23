@@ -43,7 +43,7 @@ namespace Layout {
             href === `/${path}/`
         );
       }
-    }, [window]);
+    });
     return (
       <li>
         <Link
