@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { isBrowser } from "src/utils";
-import logo from "src/images/Mirkhan_Logo.jpg";
+import logo from "src/images/Mirkhan_Logo_2.jpg";
 
 namespace Layout {
   export const Container = ({ children }: any) => (
@@ -19,14 +19,14 @@ namespace Layout {
     </>
   );
   export const Sidebar = ({ children }: any) => (
-    <aside className="w-64 overflow-y-auto bg-slate-800 flex-shrink-0">
+    <aside className="w-64 overflow-y-auto bg-gray-900 flex-shrink-0">
       {children}
     </aside>
   );
   export const SidebarLogo = () => (
     <img
       src={logo}
-      className="w-48 h-48 mx-auto my-6 rounded-full overflow-hidden"
+      className="w-48 h-48 mx-auto my-6 rounded-full overflow-hidden brightness-150"
     />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {
@@ -44,8 +44,10 @@ namespace Layout {
         <Link
           to={href}
           className={`text-lg flex items-center p-4 text-center ${
-            isActive ? "bg-sky-600" : "bg-slate-700 hover:bg-slate-600"
-          } text-white shadow-lg`}
+            isActive
+              ? "bg-sky-600 text-gray-100"
+              : "bg-gray-700 hover:bg-gray-600 text-gray-300"
+          } shadow-lg`}
         >
           {children}
         </Link>
@@ -66,15 +68,15 @@ export const MainLayout = ({ children }: any) => (
             <Layout.SidebarLogo />
             <ul>
               <Layout.SidebarItem href="/">
-                <UserCircleIcon className="h-6 w-6 mr-6 text-white" />
+                <UserCircleIcon className="h-6 w-6 mx-6" />
                 About Me
               </Layout.SidebarItem>
               <Layout.SidebarItem href="/blog">
-                <PencilSquareIcon className="h-6 w-6 mr-6 text-white" />
+                <PencilSquareIcon className="h-6 w-6 mx-6" />
                 Blog
               </Layout.SidebarItem>
               <Layout.SidebarItem href="/misc">
-                <Cog8ToothIcon className="h-6 w-6 mr-6 text-white" />
+                <Cog8ToothIcon className="h-6 w-6 mx-6" />
                 Misc.
               </Layout.SidebarItem>
             </ul>
