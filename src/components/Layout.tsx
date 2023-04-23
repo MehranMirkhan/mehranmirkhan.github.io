@@ -30,16 +30,21 @@ namespace Layout {
     />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {
+    const path = isBrowser()
+      ? window.location.pathname.split("/").filter((s) => !!s)[0] ?? ""
+      : "";
     const isActive = isBrowser()
-      ? window.location.pathname === href ||
-        window.location.pathname === `${href}/`
+      ? href === path ||
+        href === `${path}/` ||
+        href === `/${path}` ||
+        href === `/${path}/`
       : href === "/";
     return (
       <li>
         <Link
           to={href}
           className={`text-lg flex items-center p-4 text-center ${
-            isActive ? "bg-slate-500" : "bg-slate-700 hover:bg-slate-600"
+            isActive ? "bg-sky-600" : "bg-slate-700 hover:bg-slate-600"
           } text-white shadow-lg`}
         >
           {children}
@@ -75,7 +80,7 @@ export const MainLayout = ({ children }: any) => (
             </ul>
           </div>
           <div className="text-center p-2 text-gray-400 text-xs font-general">
-            © 2023 Mehran Mirkhan
+            © {new Date().getFullYear()} Mehran Mirkhan
             <br />
             All rights reserved
           </div>

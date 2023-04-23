@@ -117,7 +117,7 @@ const Products = () => (
 );
 
 const Technologies = () => (
-  <Element.Segment title="Technological Expertise">
+  <Element.Segment title="Technical Expertise">
     <div className="flex flex-col gap-10 mt-8">
       <Element.CompactSegment title="Programming Languages">
         <SkillsContainer>

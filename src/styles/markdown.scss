@@ -1,0 +1,32 @@
+.blog {
+  h1 {
+    @apply text-2xl underline underline-offset-8 pb-4;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  li {
+    @apply ml-8 list-disc;
+  }
+  p {
+    @apply my-3;
+  }
+  blockquote {
+    @apply border-l-2 border-gray-400 ml-8 pl-4 m-4;
+  }
+  table {
+    @apply mx-auto m-2 rounded overflow-hidden;
+
+    th {
+      @apply bg-slate-400 border-gray-600;
+    }
+
+    th,
+    td {
+      @apply border-2 p-3;
+    }
+  }
+}
