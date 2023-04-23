@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import {
   UserCircleIcon,
@@ -30,15 +30,29 @@ namespace Layout {
     />
   );
   export const SidebarItem = ({ children, href = "#" }: any) => {
-    const path = isBrowser()
-      ? window.location.pathname.split("/").filter((s) => !!s)[0] ?? ""
-      : "";
-    const isActive = isBrowser()
-      ? href === path ||
-        href === `${path}/` ||
-        href === `/${path}` ||
-        href === `/${path}/`
-      : href === "/";
+    const [isActive, setIsActive] = useState<boolean>(false);
+    useEffect(() => {
+      if (!isBrowser()) setIsActive(false);
+      else {
+        const path =
+          window.location.pathname.split("/").filter((s) => !!s)[0] ?? "";
+        setIsActive(
+          href === path ||
+            href === `${path}/` ||
+            href === `/${path}` ||
+            href === `/${path}/`
+        );
+      }
+    }, [window]);
+    // const path = isBrowser()
+    //   ? window.location.pathname.split("/").filter((s) => !!s)[0] ?? ""
+    //   : "";
+    // const isActive = isBrowser()
+    //   ? href === path ||
+    //     href === `${path}/` ||
+    //     href === `/${path}` ||
+    //     href === `/${path}/`
+    //   : href === "/";
     return (
       <li>
         <Link

@@ -24,6 +24,11 @@ function main() {
   const a = 1 + 3;
 }
 ```
+Some equeation: $a^2 + b^2 = c^2$
+
+$$
+a^2 + b^2 = c^2
+$$
 
 I'm sure I'll write a lot more interesting things in the future.
 
