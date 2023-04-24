@@ -3,7 +3,7 @@ import React from "react";
 import { MainLayout } from "src/components/Layout";
 import Element from "src/components/Element";
 
-import profile from "src/images/profile.jpg";
+import profile from "src/images/Mirkhan_Logo_2.jpg";
 import atomaze from "src/images/atomaze.png";
 
 export default () => (
