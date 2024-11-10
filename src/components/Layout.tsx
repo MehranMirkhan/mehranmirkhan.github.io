@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { isBrowser } from "src/utils";
-import logo from "src/images/Mirkhan_Logo_2.jpg";
+import logo from "src/images/MM_Logo.png";
 
 namespace Layout {
   export const Container = ({ children }: any) => (
