@@ -3,7 +3,7 @@ import React from "react";
 import { MainLayout } from "src/components/Layout";
 import Element from "src/components/Element";
 
-import profile from "src/images/MM_Logo.png";
+import profile from "src/images/MM_logo.png";
 import atomaze from "src/images/atomaze.png";
 
 export default () => (

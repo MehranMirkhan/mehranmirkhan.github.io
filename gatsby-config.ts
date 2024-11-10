@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/MM_Logo.png",
+        icon: "src/images/MM_logo.png",
       },
     },
     "gatsby-plugin-mdx",
