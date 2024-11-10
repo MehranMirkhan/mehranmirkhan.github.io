@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/Mirkhan_Logo_2.jpg",
+        icon: "src/images/MM_Logo.png",
       },
     },
     "gatsby-plugin-mdx",
